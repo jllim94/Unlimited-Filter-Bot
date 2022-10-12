@@ -96,7 +96,7 @@ async def del_all(message, group_id, title):
 async def count_filters(group_id):
     mycol = mydb[str(group_id)]
 
-    count = mycol.count()
+    count = mycol.count_documents({})
     if count == 0:
         return False
     else:
