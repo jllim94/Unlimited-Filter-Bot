@@ -114,7 +114,7 @@ async def filter_stats():
     totalcount = 0
     for collection in collections:
         mycol = mydb[collection]
-        count = mycol.count()
+        count = mycol.count_documents({})
         totalcount = totalcount + count
 
     totalcollections = len(collections)
