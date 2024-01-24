@@ -29,7 +29,7 @@ async def showid(client, message):
         user_id = message.chat.id
         await message.reply_text(
             f"Your ID : `{user_id}`",
-            parse_mode="md",
+            parse_mode="MARKDOWN",
             quote=True
         )
     elif (chat_type == "group") or (chat_type == "supergroup"):
@@ -41,7 +41,7 @@ async def showid(client, message):
             reply_id = ""
         await message.reply_text(
             f"Your ID : `{user_id}`\nThis Group ID : `{chat_id}`\n\n{reply_id}",
-            parse_mode="md",
+            parse_mode="MARKDOWN",
             quote=True
         )   
 
@@ -59,10 +59,10 @@ async def showinfo(client, message):
             try:
                 checkid = int(id)
             except:
-                await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="md")
+                await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="MARKDOWN")
                 return
         else:
-            await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="md")
+            await message.reply_text("__Enter a valid USER ID__", quote=True, parse_mode="MARKDOWN")
             return           
 
         if Config.SAVE_USER == "yes":
@@ -78,7 +78,7 @@ async def showinfo(client, message):
                 pass
 
         if not name:
-            await message.reply_text("__USER Details not found!!__", quote=True, parse_mode="md")
+            await message.reply_text("__USER Details not found!!__", quote=True, parse_mode="MARKDOWN")
             return
     else:
         if message.reply_to_message:
@@ -205,7 +205,7 @@ async def bot_status(client,message):
         f"{quota_details}"
         f"{disk}",
         quote=True,
-        parse_mode="md"
+        parse_mode="MARKDOWN"
     )
 
 
